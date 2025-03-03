@@ -1,0 +1,1 @@
+C:\projects\Avesham\The Super Archer 2D\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\cxx\RelWithDebInfo\653o6r6w\obj\arm64-v8a
