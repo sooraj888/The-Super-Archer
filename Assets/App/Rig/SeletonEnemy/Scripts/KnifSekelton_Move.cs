@@ -3,7 +3,14 @@ public class KnifSekelton_Move : ISekeltonKnif
 {
     public void EnterState(SekeltonKnifStateMachine character)
     {
-        character.PlayAnimation("Walk");
+        if (character._moveSpeed < -4)
+        {
+            character.PlayAnimation("Run");
+        }
+        else
+        {
+            character.PlayAnimation("Walk");
+        }
     }
 
     public void UpdateState(SekeltonKnifStateMachine character)

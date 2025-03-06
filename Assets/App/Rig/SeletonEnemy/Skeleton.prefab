@@ -1052,7 +1052,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0.84, y: 0}
-  m_SizeDelta: {x: 1.8, y: 0.13}
+  m_SizeDelta: {x: 1.9, y: 0.23}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5804400026259450026
 CanvasRenderer:
@@ -1884,9 +1884,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 4896583849761444042}
   - {fileID: 4427965505537956685}
   - {fileID: 7315512226984141115}
-  - {fileID: 4896583849761444042}
   - {fileID: 4783332993184626119}
   - {fileID: 3545136011277568677}
   - {fileID: 176777117460168648}
@@ -3000,7 +3000,7 @@ HingeJoint2D:
   m_UseLimits: 1
   m_AngleLimits:
     m_LowerAngle: -40.84
-    m_UpperAngle: 32.7
+    m_UpperAngle: 82.4
 --- !u!1 &7307723687741353139
 GameObject:
   m_ObjectHideFlags: 0

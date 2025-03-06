@@ -78,7 +78,8 @@ MonoBehaviour:
   IsFired: 0
   BackSprite: {fileID: 3382625586251797836}
   FrontSprite: {fileID: 1018578712242428545}
-  forceMultiplier: 8
+  forceMultiplier: 4
+  floatingTextPrefab: {fileID: 3766814128438090459, guid: d0b720ae1184c914c98057ea37574ee8, type: 3}
 --- !u!58 &3493119848913546846
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -95,7 +96,7 @@ CircleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 7168
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -105,10 +106,10 @@ CircleCollider2D:
     m_Bits: 4294967295
   m_ContactCaptureLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 11255
   m_CallbackLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 11255
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
@@ -189,7 +190,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1214684757
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 29
   m_Sprite: {fileID: 6708610752829667770, guid: 981400b0e6be1c34aa1482eda6c61bcd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -276,7 +277,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1214684757
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 29
   m_Sprite: {fileID: -8960113960676558351, guid: 9b2e71c7b2f4f6c4baa8a150ad55c2d0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

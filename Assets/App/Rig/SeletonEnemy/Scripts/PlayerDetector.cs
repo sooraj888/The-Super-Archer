@@ -13,9 +13,9 @@ public class PlayerDetector : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
-        {
-            GetComponentInParent<SekeltonKnifStateMachine>().IsNearPlayer = false;
-        }
+        //if (collision.CompareTag("Player"))
+        //{
+        //    GetComponentInParent<SekeltonKnifStateMachine>().IsNearPlayer = false;
+        //}
     }
 }

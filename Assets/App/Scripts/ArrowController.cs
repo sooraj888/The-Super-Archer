@@ -1,4 +1,5 @@
 
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AdaptivePerformance;
@@ -15,6 +16,8 @@ public class ArrowController : MonoBehaviour
     [SerializeField] float forceMultiplier;
 
     private Collider2D arrowCollider;
+
+    public GameObject floatingTextPrefab;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -28,8 +31,8 @@ public class ArrowController : MonoBehaviour
         {
             float angle = Mathf.Atan2(rb.linearVelocity.y, rb.linearVelocity.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+            forceMultiplier = rb.linearVelocityX;
         }
-
     }
 
     public void FireArrow()
@@ -72,43 +75,71 @@ public class ArrowController : MonoBehaviour
     }
 
 
-    void DitachHead(Collider2D other)
+    void DitachHead(Collider2D collision)
     {
-        if (other.CompareTag("End"))
+        if (collision.CompareTag("End"))
         {
             StopArrow(null);
             Destroy(gameObject);
         }
 
-        SekeltonKnifStateMachine skeltonWalkenemy = other.GetComponentInParent<SekeltonKnifStateMachine>();
+
+   
+
+        SekeltonKnifStateMachine skeltonWalkenemy = collision.GetComponentInParent<SekeltonKnifStateMachine>();
 
         if (skeltonWalkenemy != null)
         {
+           
+            
+           
+
             float damage = 0;
            
-            switch (other.gameObject.tag)
+            switch (collision.gameObject.tag)
             {
                 case "Head":
-                    damage = 150;
+                   
+                    damage = forceMultiplier * 8;
                     break;
                 case "Body":
-                    damage = 60;
+                    damage = forceMultiplier * 3;
                     break;
                 case "Leg":
-                    damage = 35; 
+                    damage = forceMultiplier * 1.5f; 
                     break;
               
                 default: break;
             }
+
+            ShowFloatingText(collision.transform.position, CalculateDamage(), Color.red);
+
+            float CalculateDamage()
+            {
+                float damageRecived = skeltonWalkenemy.healthPercent - damage;
+
+                if (damageRecived < 0)
+                {
+                    damageRecived = skeltonWalkenemy.healthPercent;
+                }
+                else
+                {
+                    damageRecived = damage;
+                }
+                
+
+                return Mathf.Round(damageRecived);
+            }
+
             skeltonWalkenemy.SetDamage(damage);
             
             if (skeltonWalkenemy.healthPercent <= 0)
             {
                 skeltonWalkenemy.ActivateRegDol();
                 
-                Animator animator = other.GetComponentInParent<Animator>();
+                Animator animator = collision.GetComponentInParent<Animator>();
 
-                EnemyController enemyController = other.GetComponentInParent<EnemyController>();
+                EnemyController enemyController = collision.GetComponentInParent<EnemyController>();
 
                 if (enemyController !=  null)
                 {
@@ -122,35 +153,35 @@ public class ArrowController : MonoBehaviour
                 }
 
                     skeltonWalkenemy.enabled = false;
-                if (other.CompareTag("Head")) // Ensure the head object has the "Head" tag
+                if (collision.CompareTag("Head")) // Ensure the head object has the "Head" tag
                 {
                   
-                    Rigidbody2D headRb = other.GetComponent<Rigidbody2D>();
-                    HingeJoint2D hinge = other.GetComponent<HingeJoint2D>();
+                    Rigidbody2D headRb = collision.GetComponent<Rigidbody2D>();
+                    //HingeJoint2D hinge = other.GetComponent<HingeJoint2D>();
 
                     if (headRb != null)
                     {
                         // Apply force based on arrow's velocity
-                        Vector2 impactForce = rb.linearVelocity.normalized * forceMultiplier;
+                        Vector2 impactForce = rb.linearVelocity.normalized * forceMultiplier ;
                         headRb.AddForce(impactForce, ForceMode2D.Impulse);
 
                         // Add torque for rotation effect
                         //headRb.AddTorque(Random.Range(-0.1f, 0.1f), ForceMode2D.Impulse);
                     }
 
-                    if (hinge != null)
-                    {
-                        hinge.useConnectedAnchor
-                            = false; 
-                    }
+                    //if (hinge != null)
+                    //{
+                    //    hinge.useConnectedAnchor
+                    //        = false; 
+                    //}
                 }
 
-                if (other.CompareTag("Body"))
+                if (collision.CompareTag("Body"))
                 {
-                    Rigidbody2D bodyRb = other.GetComponent<Rigidbody2D>();
+                    Rigidbody2D bodyRb = collision.GetComponent<Rigidbody2D>();
                     if (bodyRb != null)
                     {
-                        Vector2 impactForce = rb.linearVelocity.normalized * forceMultiplier;
+                        Vector2 impactForce = rb.linearVelocity.normalized * forceMultiplier ;
                         bodyRb.AddForce(impactForce, ForceMode2D.Impulse);
                     }
                 }
@@ -158,5 +189,16 @@ public class ArrowController : MonoBehaviour
         }
 
     }
-
+    void ShowFloatingText(Vector3 position, float text, Color color)
+    {
+        if (text <=0)
+        {
+            return;
+        }
+        if (floatingTextPrefab)
+        {
+            GameObject floatingText = Instantiate(floatingTextPrefab, position, Quaternion.identity);
+            floatingText.GetComponent<FloatingText>().SetText($"-{text}", color);
+        }
+    }
 }

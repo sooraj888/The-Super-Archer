@@ -15,7 +15,7 @@ public class SekeltonKnifStateMachine : MonoBehaviour
     public readonly KnifSekelton_Move moveState = new KnifSekelton_Move();
     public readonly KnifSekelton_Kill killState = new KnifSekelton_Kill();
 
-    [SerializeField] private float _moveSpeed;
+    public float _moveSpeed;
 
     private Rigidbody2D rb;
 
