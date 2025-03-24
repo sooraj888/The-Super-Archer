@@ -10,6 +10,7 @@ public class PrefabSpawner : MonoBehaviour
 
     private int currentSpawnCount = 0; // Tracks how many have been spawned
 
+    [SerializeField] bool InitialPose;
     private void Start()
     {
         StartCoroutine(SpawnCoroutine());
@@ -17,6 +18,11 @@ public class PrefabSpawner : MonoBehaviour
 
     IEnumerator SpawnCoroutine()
     {
+        if (InitialPose)
+        {
+            yield return new WaitForSeconds(spawnInterval);
+        }
+       
         while (currentSpawnCount < totalSpawns)
         {
             SpawnPrefab();

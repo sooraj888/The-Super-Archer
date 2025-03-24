@@ -78,7 +78,7 @@ MonoBehaviour:
   IsFired: 0
   BackSprite: {fileID: 3382625586251797836}
   FrontSprite: {fileID: 1018578712242428545}
-  forceMultiplier: 4
+  forceMultiplier: 3.5
   floatingTextPrefab: {fileID: 3766814128438090459, guid: d0b720ae1184c914c98057ea37574ee8, type: 3}
 --- !u!58 &3493119848913546846
 CircleCollider2D:

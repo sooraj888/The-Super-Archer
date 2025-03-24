@@ -100,7 +100,7 @@ public class ArrowController : MonoBehaviour
             {
                 case "Head":
                    
-                    damage = forceMultiplier * 8;
+                    damage = forceMultiplier * 5;
                     break;
                 case "Body":
                     damage = forceMultiplier * 3;

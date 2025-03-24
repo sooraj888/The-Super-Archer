@@ -14,15 +14,14 @@ public class EnemyController : MonoBehaviour
     {
         await Task.Delay(seconds * 1000);
         RemovePlatform();
-
-        await Task.Delay((seconds + 2) * 1000);
-        Destroy(gameObject,2f);
     }
 
     void RemovePlatform()
     {
         Platfrom.SetActive(false);
         Debug.Log("Function called after 2 seconds!");
+
+        Destroy(gameObject, 4f);
     }
 
    

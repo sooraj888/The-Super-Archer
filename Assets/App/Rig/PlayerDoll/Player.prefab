@@ -224,7 +224,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.985, y: -0.27599916}
+  m_ConnectedAnchor: {x: 0.9850001, y: -0.27599916}
   m_UseConnectedAnchor: 1
   m_UseMotor: 0
   m_Motor:
@@ -350,7 +350,7 @@ FixedJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: -0.18998249, y: 0.042586923}
+  m_ConnectedAnchor: {x: -0.18998238, y: 0.042586923}
   m_DampingRatio: 1
   m_Frequency: 0
 --- !u!1 &741373584679535062
@@ -546,7 +546,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.9667354, y: 0.27857524}
+  m_ConnectedAnchor: {x: 0.96673566, y: 0.27857524}
   m_UseConnectedAnchor: 1
   m_UseMotor: 0
   m_Motor:
@@ -1049,7 +1049,7 @@ FixedJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0.19149019, y: -0.035192296}
+  m_ConnectedAnchor: {x: 0.19149008, y: -0.035192296}
   m_DampingRatio: 1
   m_Frequency: 0
 --- !u!1 &2085942921849847789
@@ -1746,7 +1746,7 @@ MonoBehaviour:
   arrowOffsetX: 1.231
   ArrowPrefab: {fileID: 8691687014854435047, guid: 7c4e967644f533e49b609a774c3777f6, type: 3}
   _point: {fileID: 3767119843834931702, guid: cbf8304b52ffdd546a7a831b6e510c95, type: 3}
-  _numberOfPoints: 60
+  _numberOfPoints: 7
   _spaceBetweenPoints: 0.04
   Bow: {fileID: 3582950287942980488}
   TrajectoryPosition: {fileID: 3582950287942980488}
@@ -2387,7 +2387,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 1.2082193, y: -0.028484577}
+  m_ConnectedAnchor: {x: 1.2082194, y: -0.028484577}
   m_UseConnectedAnchor: 1
   m_UseMotor: 0
   m_Motor:
@@ -3295,7 +3295,7 @@ HingeJoint2D:
   m_BreakAction: 3
   m_AutoConfigureConnectedAnchor: 1
   m_Anchor: {x: 0.0000011522919, y: 0.0000026460466}
-  m_ConnectedAnchor: {x: 0.8320014, y: -0.0019971586}
+  m_ConnectedAnchor: {x: 0.8320014, y: -0.0019970594}
   m_UseConnectedAnchor: 1
   m_UseMotor: 0
   m_Motor:
